@@ -31,9 +31,12 @@ def send_mail(receiver_email, spoofed_email, spoofed_name, message, subject, smt
         print(f"Error: {e}")
         return False
 
-spoofed_email = 'guncity11@gmail.com'
-spoofed_name = 'Ganesh Reddy Karri'
-smtp_file_path = '/Users/vigneshk/Documents/GitHub/GSPoof/smtp_configurations.txt'
+# Prompt user for sender's email and name
+spoofed_email = input("Enter sender's email: ")
+spoofed_name = input("Enter sender's name: ")
+
+# Prompt user for SMTP configurations file path
+smtp_file_path = input("Enter the file path of the SMTP configurations text file: ")
 
 smtp_configurations = []
 with open(smtp_file_path, 'r') as file:
@@ -46,9 +49,11 @@ with open(smtp_file_path, 'r') as file:
             'password': smtp_password
         })
 
-receiver_email = 'vigneshk1432@gmail.com'
-message = 'Your Leave Has been Approved'
-subject = 'Re:Leave'
+
+# Prompt user for email details
+receiver_email = input("Enter receiver's email: ")
+message = input("Enter message: ")
+subject = input("Enter subject: ")
 
 for config in smtp_configurations:
     smtp_host = config['host']
