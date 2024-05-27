@@ -1,0 +1,1 @@
+smtp-relay.brevo.com;587;venomcyberrrr@gmail.com;znKr7C85jSqLBR43
